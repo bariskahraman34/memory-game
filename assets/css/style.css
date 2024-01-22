@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@700&display=swap');
+
+*,*::after,*::before{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Atkinson Hyperlegible', sans-serif;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: #f2f2f2;
+}
+
+.container{
+    width: 768px;
+    padding: 37px 40px 48px 39px;
+    background-color: #fff;
+    border-radius: 20px;
+}
+
+.memory-game-header{
+    display: flex;
+}
+
+.title{
+    margin-right: 244px;
+    color: #152938;
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.buttons{
+    display: flex;
+    gap: 18px;
+}
+
+.buttons button{
+    border-radius: 26px;
+    padding: 14px 24px;
+    border: none;
+    cursor: pointer;
+}
+
+.restart{
+    color: #FCFCFC;
+    font-size: 20px;
+    font-weight: 700;
+    background: #FDA214;
+}
+
+.new-game{
+    background: #DFE7EC;
+    color: #304859;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.memory-game-container{
+    margin-top: 157px;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    justify-content: center;
+    gap: 20px;
+}
+
+.box{
+    width: 118px;
+    height: 118px;
+    border-radius: 59px;
+    background-color: #304859;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FCFCFC;
+    font-size: 56px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+footer{
+    margin-top: 126px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+footer div{
+    padding: 15px 21px;
+    border-radius: 10px;
+    background: #DFE7EC;
+    display: flex;
+    gap: 105px;
+    align-items: center;
+}
+
+.footer-text-title{
+    color: #7191A5;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.footer-text-content{
+    color: #304859;
+    font-size: 32px;
+    font-weight: 700;
+}
