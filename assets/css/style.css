@@ -102,3 +102,53 @@ footer div{
     font-size: 32px;
     font-weight: 700;
 }
+
+/*Oyun tamamlandı Ekranı*/
+
+.gameover-dialog{
+    width: 900px;
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-color: #cccc;
+    border-radius: 10px;
+    border-width: 3px;
+    text-align: center;
+    padding: 80px 50px 40px 50px;
+}
+
+.gameover-dialog::backdrop{
+    background-color: #313942;
+    opacity: .75;
+}
+
+.gameover-dialog h1{
+    font-size: 56px;
+}
+
+.game-result{
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+.game-result-time , .game-result-moves{
+    gap: 30px;
+    border-radius: 26px;
+    padding: 20px 20px;
+    border: none;
+    color: #FCFCFC;
+    font-size: 20px;
+    font-weight: 700;
+    background: #152938;
+    color: white;
+}
+
+.gameover-dialog .buttons{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 50px;
+}

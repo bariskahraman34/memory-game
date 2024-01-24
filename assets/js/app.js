@@ -2,8 +2,11 @@ const spanEmojis = document.querySelectorAll('.emoji');
 const emojisBoxes = document.querySelectorAll('.box');
 const movesCounter = document.querySelector('.moves-counter');
 const timer = document.querySelector('.time-counter');
-const restartGame = document.querySelector('.restart');
-const newGame = document.querySelector('.new-game');
+const restartGameBtns = document.querySelectorAll('.restart');
+const newGameBtns = document.querySelectorAll('.new-game');
+const gameOver = document.querySelector('.gameover-dialog');
+const gameOverTimeResult = document.querySelector('.game-result-time');
+const gameOverMovesResult = document.querySelector('.game-result-moves');
 
 let emojis = ["😀","😂","🙃","😍","🥰","😎","😭","😳"];
 let emojisCopy = [...emojis,...emojis];
@@ -21,6 +24,7 @@ function resetGame(){
     moves = 0;
     timeCounter = 0;
     minuteCounter = 0;
+    score = 0;
     clickedEmojis = [];
     disabledClick = false;
     shuffleEmojis();
@@ -28,8 +32,11 @@ function resetGame(){
     for (let i = 0 ; i < emojisBoxes.length ; i++) {
         spanEmojis[i].textContent = emojisCopy[i];
         spanEmojis[i].style.opacity = 1;
+        emojisBoxes[i].style.pointerEvents = 'initial';
+        emojisBoxes[i].style.backgroundColor = '#304859';
     }
-
+    movesCounter.innerHTML = moves;
+    gameTimerInterval = setInterval(gameTimer, 1000);
 }
 
 function init(){
@@ -66,6 +73,9 @@ function emojiBoxClicked(e){
         }
     }
     if(score == 8){
+        gameOverTimeResult.innerHTML = `Time: ${timer.innerHTML}` ;
+        gameOverMovesResult.innerHTML = `Moves: ${movesCounter.innerHTML}`;
+        gameOver.showModal();
         clearInterval(gameTimerInterval);
     }
 }
@@ -111,13 +121,18 @@ function gameTimer(){
     timeCounter++;
 }
 
-restartGame.addEventListener('click',function(){
+for (let i = 0 ; i < newGameBtns.length ; i++) {
+    restartGameBtns[i].addEventListener('click',function(){
+        gameOver.close();
+        setTimeout(resetGame,1000)
+    })
+    
+    newGameBtns[i].addEventListener('click',function(){
+        gameOver.close();
+        setTimeout(resetGame,1000)
+    })
+}
 
-    resetGame()
-})
 
-newGame.addEventListener('click',function(){
-    resetGame()
-})
 
 init();
